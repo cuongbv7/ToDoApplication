@@ -1,0 +1,9 @@
+TodoApplication/bin
+TodoApplication/obj
+TodoApplication/Sqlite.db
+TodoApplication/Sqlite.db-shm
+TodoApplication/Sqlite.db-wal
+UnitTest/bin
+UnitTest/obj
+TodoApplication.sln
+.vs

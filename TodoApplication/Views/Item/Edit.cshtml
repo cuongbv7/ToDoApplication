@@ -1,0 +1,36 @@
+﻿@model TodoApplication.Models.ViewModels.TodoViewModel
+@{
+}
+<h1>Edit Task</h1>
+<form method="post" action="Edit">
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" id="ID" asp-for="Todo.Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Summary</label>
+        <input type="text" class="form-control" id="summary" asp-for="Todo.Summary" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" id="description" asp-for="Todo.Description"></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select class="form-control" id="status" asp-for="Todo.Status">
+            <option value="To Do" selected="@(Model.Todo.Status == "To Do")">To Do</option>
+            <option value="In Progress" selected="@(Model.Todo.Status == "In Progress")">In Progress</option>
+            <option value="Completed" selected="@(Model.Todo.Status == "Completed")">Completed</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Assignee</label>
+        <select class="form-control" id="assignee" asp-for="Todo.Assignee">
+            <option value="Admin" selected="@(Model.Todo.Assignee == "Admin")">Admin</option>
+            <option value="Supervisor" selected="@(Model.Todo.Assignee == "Supervisor")">Supervisor</option>
+            <option value="Staff" selected="@(Model.Todo.Assignee == "Staff")">Staff</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Item">Delete</button>
+</form>

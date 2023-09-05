@@ -1,0 +1,27 @@
+﻿@model TodoApplication.Models.ViewModels.TodoViewModel
+@{
+
+}
+<h1>Todo Tasks</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Summary</th>
+            <th>Status</th>
+            <th>Assignee</th>
+        </tr>
+    </thead>
+    <tbody>
+          @foreach (var todoItem in Model.TodoList)
+           {
+                <tr>
+                    <td>@todoItem.Id</td>
+                    <td>@todoItem.Summary</td>
+                    <td>@todoItem.Status</td>
+                    <td>@todoItem.Assignee</td>
+                    <td><a href ="Item/Edit/@todoItem.Id">View</a></td>
+                </tr>
+           }
+    </tbody>
+</table>
